@@ -1,0 +1,723 @@
+Process:         fdf [83838]
+Path:            /Users/pdemian/FdF/fdf
+Load Address:    0x102b52000
+Identifier:      fdf
+Version:         0
+Code Type:       X86-64
+Parent Process:  zsh [83778]
+
+Date/Time:       2019-07-24 19:54:24.708 +0300
+Launch Time:     2019-07-24 19:54:24.469 +0300
+OS Version:      Mac OS X 10.13.3 (17D47)
+Report Version:  7
+Analysis Tool:   /Applications/Xcode.app/Contents/Developer/usr/bin/leaks
+Analysis Tool Version:  Xcode 9.2 (9C40b)
+----
+
+leaks Report Version:  2.0
+Process 83838: 811 nodes malloced for 31 KB
+Process 83838: 220 leaks for 3696 total leaked bytes.
+Leak: 0x7f9c98c00310  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000000 0x00000000 0x00000000 0x20000000 	............... 
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:36 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c027d0  size=32  zone: DefaultMallocZone_0x102c64000
+	0x98c027f0 0x00007f9c 0x0000000c 0x00000000 	.'..............
+	0x98c028a0 0x00007f9c 0x30202030 0x20302020 	.(......0  0  0 
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:36 | ft_lstnew ft_lstnew.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02850  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000000 0x00000001 0x00000000 0x20000000 	............... 
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:36 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02860  size=32  zone: DefaultMallocZone_0x102c64000
+	0x98c02880 0x00007f9c 0x0000000c 0x00000000 	.(..............
+	0x98c02da0 0x00007f9c 0x20302020 0x00203020 	.-......  0  0 .
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:36 | ft_lstnew ft_lstnew.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02890  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000001 0x00000000 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c028d0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000002 0x00000000 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02910  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000003 0x00000000 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02950  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000004 0x00000000 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02990  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000005 0x00000000 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c029d0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000006 0x00000000 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02a10  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000007 0x00000000 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02a50  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000008 0x00000000 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02a90  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  "	"
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02ad0  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  "
+"
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02b10  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000b 0x00000000 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02b50  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000c 0x00000000 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02b90  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  ""
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02bd0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000e 0x00000000 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02c10  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000f 0x00000000 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02c50  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000010 0x00000000 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02c90  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000011 0x00000000 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02cd0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000012 0x00000000 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02d90  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000001 0x00000001 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02dd0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000002 0x00000001 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02e10  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000003 0x00000001 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02e50  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000004 0x00000001 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02e90  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000005 0x00000001 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02ed0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000006 0x00000001 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02f10  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000007 0x00000001 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02f50  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000008 0x00000001 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02f90  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  "	"
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c02fd0  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  "
+"
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c03010  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000b 0x00000001 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c03050  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000c 0x00000001 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c03090  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  ""
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c030d0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000e 0x00000001 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c03110  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000f 0x00000001 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c03150  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000010 0x00000001 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c03190  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000011 0x00000001 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98c031d0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000012 0x00000001 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00050  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000000 0x00000002 0x00000000 0x20000000 	............... 
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:36 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00060  size=32  zone: DefaultMallocZone_0x102c64000
+	0x98e000c0 0x00007f9c 0x0000000c 0x00000000 	................
+	0x98e000e0 0x00007f9c 0x20303120 0x00023031 	........ 10 10..
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:36 | ft_lstnew ft_lstnew.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00080  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000000 0x00000003 0x00000000 0x20000000 	............... 
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:36 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00090  size=32  zone: DefaultMallocZone_0x102c64000
+	0x98e000b0 0x00007f9c 0x0000000c 0x00000000 	................
+	0x98e005e0 0x00007f9c 0x20302020 0x00203031 	........  0 10 .
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:36 | ft_lstnew ft_lstnew.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e000d0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000001 0x00000002 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00110  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000002 0x00000002 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00150  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000003 0x00000002 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00190  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000004 0x00000002 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e001d0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000005 0x00000002 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00210  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000006 0x00000002 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00250  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000007 0x00000002 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00290  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000008 0x00000002 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e002d0  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  "	"
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00310  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  "
+"
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00350  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000b 0x00000002 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00390  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000c 0x00000002 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e003d0  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  ""
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00410  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000e 0x00000002 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00450  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000f 0x00000002 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00490  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000010 0x00000002 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e004d0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000011 0x00000002 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00510  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000012 0x00000002 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00590  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000000 0x00000004 0x00000000 0x20000000 	............... 
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:36 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e005a0  size=32  zone: DefaultMallocZone_0x102c64000
+	0x98e005c0 0x00007f9c 0x0000000c 0x00000000 	................
+	0x98e00ae0 0x00007f9c 0x20302020 0x00203031 	........  0 10 .
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:36 | ft_lstnew ft_lstnew.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e005d0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000001 0x00000003 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00610  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000002 0x00000003 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00650  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000003 0x00000003 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00690  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000004 0x00000003 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e006d0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000005 0x00000003 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00710  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000006 0x00000003 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00750  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000007 0x00000003 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00790  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000008 0x00000003 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e007d0  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  "	"
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00810  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  "
+"
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00850  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000b 0x00000003 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00890  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000c 0x00000003 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e008d0  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  ""
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00910  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000e 0x00000003 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00950  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000f 0x00000003 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00990  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000010 0x00000003 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e009d0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000011 0x00000003 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00a10  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000012 0x00000003 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00a90  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000000 0x00000005 0x00000000 0x20000000 	............... 
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:36 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00aa0  size=32  zone: DefaultMallocZone_0x102c64000
+	0x98e00ac0 0x00007f9c 0x0000000c 0x00000000 	................
+	0x98e00fe0 0x00007f9c 0x20303120 0x00203031 	........ 10 10 .
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:36 | ft_lstnew ft_lstnew.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00ad0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000001 0x00000004 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00b10  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000002 0x00000004 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00b50  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000003 0x00000004 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00b90  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000004 0x00000004 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00bd0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000005 0x00000004 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00c10  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000006 0x00000004 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00c50  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000007 0x00000004 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00c90  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000008 0x00000004 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00cd0  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  "	"
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00d10  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  "
+"
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00d50  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000b 0x00000004 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00d90  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000c 0x00000004 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00dd0  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  ""
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00e10  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000e 0x00000004 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00e50  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000f 0x00000004 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00e90  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000010 0x00000004 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00ed0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000011 0x00000004 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00f10  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000012 0x00000004 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00f90  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000000 0x00000006 0x00000000 0x20000000 	............... 
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:36 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00fa0  size=32  zone: DefaultMallocZone_0x102c64000
+	0x98e00fc0 0x00007f9c 0x0000000c 0x00000000 	................
+	0x98e014e0 0x00007f9c 0x20302020 0x00203020 	........  0  0 .
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:36 | ft_lstnew ft_lstnew.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e00fd0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000001 0x00000005 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01010  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000002 0x00000005 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01050  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000003 0x00000005 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01090  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000004 0x00000005 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e010d0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000005 0x00000005 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01110  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000006 0x00000005 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01150  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000007 0x00000005 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01190  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000008 0x00000005 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e011d0  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  "	"
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01210  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  "
+"
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01250  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000b 0x00000005 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01290  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000c 0x00000005 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e012d0  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  ""
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01310  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000e 0x00000005 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01350  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000f 0x00000005 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01390  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000010 0x00000005 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e013d0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000011 0x00000005 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01410  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000012 0x00000005 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01490  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000000 0x00000007 0x00000000 0x20000000 	............... 
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:36 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e014a0  size=32  zone: DefaultMallocZone_0x102c64000
+	0x98e014c0 0x00007f9c 0x0000000c 0x00000000 	................
+	0x98e019e0 0x00007f9c 0x20302020 0x00203020 	........  0  0 .
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:36 | ft_lstnew ft_lstnew.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e014d0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000001 0x00000006 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01510  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000002 0x00000006 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01550  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000003 0x00000006 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01590  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000004 0x00000006 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e015d0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000005 0x00000006 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01610  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000006 0x00000006 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01650  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000007 0x00000006 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01690  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000008 0x00000006 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e016d0  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  "	"
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01710  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  "
+"
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01750  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000b 0x00000006 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01790  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000c 0x00000006 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e017d0  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  ""
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01810  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000e 0x00000006 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01850  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000f 0x00000006 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01890  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000010 0x00000006 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e018d0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000011 0x00000006 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01910  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000012 0x00000006 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01990  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000000 0x00000008 0x00000000 0x20000000 	............... 
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:36 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e019a0  size=32  zone: DefaultMallocZone_0x102c64000
+	0x98e019c0 0x00007f9c 0x0000000c 0x00000000 	................
+	0x98e01ee0 0x00007f9c 0x20303120 0x00203031 	........ 10 10 .
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:36 | ft_lstnew ft_lstnew.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e019d0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000001 0x00000007 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01a10  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000002 0x00000007 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01a50  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000003 0x00000007 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01a90  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000004 0x00000007 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01ad0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000005 0x00000007 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01b10  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000006 0x00000007 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01b50  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000007 0x00000007 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01b90  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000008 0x00000007 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01bd0  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  "	"
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01c10  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  "
+"
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01c50  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000b 0x00000007 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01c90  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000c 0x00000007 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01cd0  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  ""
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01d10  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000e 0x00000007 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01d50  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000f 0x00000007 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01d90  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000010 0x00000007 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01dd0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000011 0x00000007 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01e10  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000012 0x00000007 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01e90  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000000 0x00000009 0x00000000 0x20000000 	............... 
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:36 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01ea0  size=32  zone: DefaultMallocZone_0x102c64000
+	0x98e01ec0 0x00007f9c 0x0000000c 0x00000000 	................
+	0x98e023e0 0x00007f9c 0x20302020 0x00203020 	.#......  0  0 .
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:36 | ft_lstnew ft_lstnew.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01ed0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000001 0x00000008 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01f10  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000002 0x00000008 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01f50  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000003 0x00000008 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01f90  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000004 0x00000008 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e01fd0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000005 0x00000008 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02010  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000006 0x00000008 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02050  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000007 0x00000008 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02090  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000008 0x00000008 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e020d0  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  "	"
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02110  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  "
+"
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02150  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000b 0x00000008 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02190  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000c 0x00000008 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e021d0  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  ""
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02210  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000e 0x00000008 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02250  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000f 0x00000008 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02290  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000010 0x00000008 0x0000000a 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e022d0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000011 0x00000008 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02310  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000012 0x00000008 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02390  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000000 0x0000000a 0x00000000 0x20000000 	............... 
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:36 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e023a0  size=32  zone: DefaultMallocZone_0x102c64000
+	0x98e023c0 0x00007f9c 0x0000000c 0x00000000 	.#..............
+	0x98e028e0 0x00007f9c 0x20302020 0x00203020 	.(......  0  0 .
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:36 | ft_lstnew ft_lstnew.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e023d0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000001 0x00000009 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02410  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000002 0x00000009 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02450  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000003 0x00000009 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02490  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000004 0x00000009 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e024d0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000005 0x00000009 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02510  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000006 0x00000009 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02550  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000007 0x00000009 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02590  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000008 0x00000009 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e025d0  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  "	"
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02610  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  "
+"
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02650  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000b 0x00000009 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02690  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000c 0x00000009 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e026d0  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  ""
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02710  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000e 0x00000009 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02750  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000f 0x00000009 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02790  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000010 0x00000009 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e027d0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000011 0x00000009 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02810  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000012 0x00000009 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e028d0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000001 0x0000000a 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02910  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000002 0x0000000a 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02950  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000003 0x0000000a 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02990  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000004 0x0000000a 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e029d0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000005 0x0000000a 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02a10  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000006 0x0000000a 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02a50  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000007 0x0000000a 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02a90  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000008 0x0000000a 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02ad0  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  "	"
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02b10  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  "
+"
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02b50  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000b 0x0000000a 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02b90  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000c 0x0000000a 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02bd0  size=16  zone: DefaultMallocZone_0x102c64000  length: 1  ""
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02c10  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000e 0x0000000a 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02c50  size=16  zone: DefaultMallocZone_0x102c64000
+	0x0000000f 0x0000000a 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02c90  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000010 0x0000000a 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02cd0  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000011 0x0000000a 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+Leak: 0x7f9c98e02d10  size=16  zone: DefaultMallocZone_0x102c64000
+	0x00000012 0x0000000a 0x00000000 0x00000000 	................
+	Call stack: [thread 0x7fff9d3f7340]: | 0x1 | start | main main.c:46 | get_map parser.c:57 | get_row parser.c:40 | make_point parser.c:19 | malloc | malloc_zone_malloc 
+
+
+Binary Images:
+       0x102b52000 -        0x102b56fff +fdf (0) <4E1C16DB-7A09-3CB0-AFA7-F8B3101C11DB> /Users/pdemian/FdF/fdf
+       0x10395c000 -        0x1039a698f  dyld (519.2.2) <6695F30B-4E88-3C0B-9867-7D738C44A3E6> /usr/lib/dyld
+    0x7fff61c85000 -     0x7fff61cb8fff  libclosured.dylib (519.2.2) <48051216-5647-3643-B979-B77D0FD20011> /usr/lib/closure/libclosured.dylib
+    0x7fff62197000 -     0x7fff62198ff3  libSystem.B.dylib (1252) <47329E26-DC23-3EBA-9461-37755368327D> /usr/lib/libSystem.B.dylib
+    0x7fff623cb000 -     0x7fff62421fff  libc++.1.dylib (400.9) <FCF5E1F6-2B04-3545-8004-F3AB32FED172> /usr/lib/libc++.1.dylib
+    0x7fff62422000 -     0x7fff62446ff7  libc++abi.dylib (400.7) <217656D5-BC40-37FF-B322-91CB2AAD4F34> /usr/lib/libc++abi.dylib
+    0x7fff63798000 -     0x7fff63b867e7  libobjc.A.dylib (723) <93A92316-DE1E-378C-8891-99720B50D075> /usr/lib/libobjc.A.dylib
+    0x7fff64233000 -     0x7fff64237ff7  libcache.dylib (80) <354F3B7D-404E-3398-9EBF-65CA2CE65211> /usr/lib/system/libcache.dylib
+    0x7fff64238000 -     0x7fff64242ff3  libcommonCrypto.dylib (60118.30.2) <674286D3-7744-36A3-9AAA-49DFCD97A986> /usr/lib/system/libcommonCrypto.dylib
+    0x7fff64243000 -     0x7fff6424afff  libcompiler_rt.dylib (62) <4487CFBA-A5D7-3282-9E6B-94CAD7BE507E> /usr/lib/system/libcompiler_rt.dylib
+    0x7fff6424b000 -     0x7fff64253ffb  libcopyfile.dylib (146.30.2) <2C7C67D7-562B-3FFA-973D-BACF4C10E1EC> /usr/lib/system/libcopyfile.dylib
+    0x7fff64254000 -     0x7fff642d9fff  libcorecrypto.dylib (562.30.10) <8A53EFE1-AFCA-3676-BEE1-FA5ED9F0E222> /usr/lib/system/libcorecrypto.dylib
+    0x7fff64361000 -     0x7fff6439aff7  libdispatch.dylib (913.30.4) <7D0E3183-282B-3FEE-A734-2C0ADC092084> /usr/lib/system/libdispatch.dylib
+    0x7fff6439b000 -     0x7fff643b8ff7  libdyld.dylib (519.2.2) <C50D02BC-A333-3313-B787-02F255A6783F> /usr/lib/system/libdyld.dylib
+    0x7fff643b9000 -     0x7fff643b9ffb  libkeymgr.dylib (28) <6D84A96F-C65B-38EC-BDB5-21FD2C97E7B2> /usr/lib/system/libkeymgr.dylib
+    0x7fff643c7000 -     0x7fff643c7ff7  liblaunch.dylib (1205.30.29) <E66F58ED-C15E-3DFB-BC22-A861E13918C6> /usr/lib/system/liblaunch.dylib
+    0x7fff643c8000 -     0x7fff643ccffb  libmacho.dylib (900.0.1) <756F2553-07B6-3B42-ACEA-2F0F1A5E8D0F> /usr/lib/system/libmacho.dylib
+    0x7fff643cd000 -     0x7fff643cfff3  libquarantine.dylib (86) <6AC8773F-3817-3D82-99C2-01BABB9C3CBB> /usr/lib/system/libquarantine.dylib
+    0x7fff643d0000 -     0x7fff643d1ff3  libremovefile.dylib (45) <912FA211-DD8C-3C92-8424-21B89F8B10FD> /usr/lib/system/libremovefile.dylib
+    0x7fff643d2000 -     0x7fff643e9fff  libsystem_asl.dylib (356.1.1) <94972913-9DF0-3C78-847C-43E58919E3DA> /usr/lib/system/libsystem_asl.dylib
+    0x7fff643ea000 -     0x7fff643eafff  libsystem_blocks.dylib (67) <F2493BB5-B1C6-3C4D-9F1F-1B402E0F1DB7> /usr/lib/system/libsystem_blocks.dylib
+    0x7fff643eb000 -     0x7fff64474ff7  libsystem_c.dylib (1244.30.3) <E0136C71-0648-36F0-9F84-82EA2748A8D7> /usr/lib/system/libsystem_c.dylib
+    0x7fff64475000 -     0x7fff64478ffb  libsystem_configuration.dylib (963.30.1) <0F8D0B76-4F7D-34EC-AB6C-50F9465809DA> /usr/lib/system/libsystem_configuration.dylib
+    0x7fff64479000 -     0x7fff6447cffb  libsystem_coreservices.dylib (51) <21A488D0-2D07-344E-8631-CC8B2A246F35> /usr/lib/system/libsystem_coreservices.dylib
+    0x7fff6447d000 -     0x7fff6447efff  libsystem_darwin.dylib (1244.30.3) <2F750CB1-BC26-3FA3-AE59-553EE30D451B> /usr/lib/system/libsystem_darwin.dylib
+    0x7fff6447f000 -     0x7fff64485ff7  libsystem_dnssd.dylib (878.30.4) <EB9BB165-45A4-367C-B33A-688D4F383A95> /usr/lib/system/libsystem_dnssd.dylib
+    0x7fff64486000 -     0x7fff644cfff7  libsystem_info.dylib (517.30.1) <7D79E167-4B5C-3833-81EE-3AF3FB53616D> /usr/lib/system/libsystem_info.dylib
+    0x7fff644d0000 -     0x7fff644f5ff7  libsystem_kernel.dylib (4570.41.2) <5155A4C3-825B-3178-AC51-0D2D2F2A6618> /usr/lib/system/libsystem_kernel.dylib
+    0x7fff644f6000 -     0x7fff64541fcb  libsystem_m.dylib (3146) <ABB1B85F-9FFE-31B8-AD4F-E39A30794A93> /usr/lib/system/libsystem_m.dylib
+    0x7fff64542000 -     0x7fff64561fff  libsystem_malloc.dylib (140.40.1) <36B22C99-D772-3039-9A4C-AA31389965E1> /usr/lib/system/libsystem_malloc.dylib
+    0x7fff64562000 -     0x7fff64606ff3  libsystem_network.dylib (1229.30.11) <40BAD301-8744-3AD8-A688-E7925C587B00> /usr/lib/system/libsystem_network.dylib
+    0x7fff64607000 -     0x7fff64611ffb  libsystem_networkextension.dylib (767.40.1) <CEDC330D-28F0-3902-BEB0-10B92ACEC69F> /usr/lib/system/libsystem_networkextension.dylib
+    0x7fff64612000 -     0x7fff6461bff3  libsystem_notify.dylib (172) <98EA3D62-7C86-30DE-8261-D020D2F1EFF3> /usr/lib/system/libsystem_notify.dylib
+    0x7fff6461c000 -     0x7fff64623ff7  libsystem_platform.dylib (161.20.1) <C049250F-8C35-314D-810F-4E28AEAED983> /usr/lib/system/libsystem_platform.dylib
+    0x7fff64624000 -     0x7fff6462ffff  libsystem_pthread.dylib (301.30.1) <ABA848E1-6978-3B42-A3A7-608B2C36FA93> /usr/lib/system/libsystem_pthread.dylib
+    0x7fff64630000 -     0x7fff64633ff3  libsystem_sandbox.dylib (765.40.2) <922D3D15-AB4C-3F1A-A94F-39214AF1ADB3> /usr/lib/system/libsystem_sandbox.dylib
+    0x7fff64634000 -     0x7fff64635ff3  libsystem_secinit.dylib (30) <F06ADB8F-9E94-34A7-B3C9-2C22FDD14BAD> /usr/lib/system/libsystem_secinit.dylib
+    0x7fff64636000 -     0x7fff6463dff7  libsystem_symptoms.dylib (820.30.7) <DC3586C2-AA56-3419-88D3-FC0DBF08E3C0> /usr/lib/system/libsystem_symptoms.dylib
+    0x7fff6463e000 -     0x7fff64651ff7  libsystem_trace.dylib (829.30.14) <69EBF017-D40F-30D7-9B0B-BFC862D761A5> /usr/lib/system/libsystem_trace.dylib
+    0x7fff64653000 -     0x7fff64658ff7  libunwind.dylib (35.3) <6D4FCD49-D2A9-3233-95C7-A7635CE265F2> /usr/lib/system/libunwind.dylib
+    0x7fff64659000 -     0x7fff64685ff7  libxpc.dylib (1205.30.29) <F7E5F1BC-614B-39CB-B6CE-92A9C7B7EC0B> /usr/lib/system/libxpc.dylib
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0 10 10  0  0 10 10  0  0  0 10 10 10 10 10  0  0  0
+  0  0 10 10  0  0 10 10  0  0  0  0  0  0  0 10 10  0  0
+  0  0 10 10  0  0 10 10  0  0  0  0  0  0  0 10 10  0  0
+  0  0 10 10 10 10 10 10  0  0  0  0 10 10 10 10  0  0  0
+  0  0  0 10 10 10 10 10  0  0  0 10 10  0  0  0  0  0  0
+  0  0  0  0  0  0 10 10  0  0  0 10 10  0  0  0  0  0  0
+  0  0  0  0  0  0 10 10  0  0  0 10 10 10 10 10 10  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
