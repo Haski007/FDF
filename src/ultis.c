@@ -18,7 +18,26 @@ int			show_error(const char *error)
 	exit(0);
 }
 
-void		init_map(t_map *map)
+void		init_structures(t_map *map, t_api *api)
 {
 	map->map = NULL;
 }
+
+int			get_percent_color(int color, double percent)
+{
+	int		r;
+	int		g;
+	int		b;
+	int		res;
+
+	r = (color >> 16) & 0xFF;
+	g = (color >> 8) & 0xFF;
+	b = color & 0xFF;
+	res = r * percent;
+	res = res << 8;
+	res += g * percent;
+	res = res << 8;
+	res += b * percent;
+	return (res);
+}
+

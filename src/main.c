@@ -39,18 +39,28 @@ int				main(int ac, char **av)
 	t_map		map;
 	int			i;
 	int			color;
+	int			x;
+	int			y;
 
 	// if (ac != 2)
 	// 	show_error("Incorrect number of arguments");
 	api = (t_api *)malloc(sizeof(t_api));
 	api->color = 0x70ff0000;
+	init_structures(&map, api);
     // map.fd = open("test_maps/42.fdf", O_RDONLY);
 	// get_map(&map);
 	// paint_map(&map);
 	api->mlx = mlx_init();
 	api->win = mlx_new_window(api->mlx, 1000, 1000, "My, fucking graphic\n");
-	draw_line(api, 500, 500, 600, 520);
-	mlx_pixel_put(api->mlx, api->win, 600, 520, api->color);
+	// y = -1;
+	// while (++y < 1000)
+	// {
+	// 	x = -1;
+	// 	while (++x < 1000)
+	// 		mlx_pixel_put(api->mlx, api->win, x, y, 0xffffff);
+	// }
+	save_line(api, 500, 500, 900, 550);
+	// mlx_pixel_put(api->mlx, api->win, 480, 960, api->color);
 	// mlx_pixel_put(api->mlx, api->win, 25, 25, color);
 	mlx_loop(api->mlx);
 	// system("leaks fdf");

@@ -12,6 +12,17 @@
 
 #include "../includes/fdf.h"
 
+t_pxl			*make_pxl(int color, int x, int y)
+{
+	t_pxl	*pxl;
+
+	pxl = (t_pxl*)malloc(sizeof(t_pxl));
+	pxl->x = x;
+	pxl->y = y;
+	pxl->color = color;
+	return (pxl);
+}
+
 t_point			*make_point(int x, int y, int z)
 {
 	t_point	*point;
@@ -53,7 +64,6 @@ void			get_map(t_map *map)
 	int		y;
 	t_list	*tmp;
 
-	init_map(map);
 	y = -1;
 	while (get_next_line(map->fd, &line))
 	{

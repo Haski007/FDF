@@ -19,8 +19,14 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <mlx.h>
+# include <math.h>
 
 # include "../libft/includes/libft.h"
+
+#define ipart_(X) ((int)(X))
+#define round_(X) ((int)(((double)(X))+0.5))
+#define fpart_(X) (((double)(X))-(double)ipart_(X))
+#define rfpart_(X) (1.0-fpart_(X))
 
 # define PURPLE 0x800080
 
@@ -36,8 +42,16 @@ typedef struct	s_api
 	void		*mlx;
 	void		*win;
 	void		*img;
+	t_list		*res;
 	int			color;
 }				t_api;
+
+typedef	struct	s_pxl
+{
+	int			x;
+	int			y;
+	int			color;
+}				t_pxl;
 
 typedef struct	s_map
 {
@@ -47,8 +61,12 @@ typedef struct	s_map
 
 int				show_error(const char *error);
 void            get_map(t_map *map);
-void			init_map(t_map *map);
-void			draw_line(t_api *api, int x1, int x2, int y1, int y2);
+void			init_structures(t_map *map, t_api *api);
+void			save_line(t_api *api, int x1, int x2, int y1, int y2);
+int				get_percent_color(int color, double percent);
+t_pxl			*make_pxl(int color, int x, int y);
+
+
 
 
 
