@@ -23,10 +23,12 @@
 
 # include "../libft/includes/libft.h"
 
-#define ipart_(X) ((int)(X))
-#define round_(X) ((int)(((double)(X))+0.5))
-#define fpart_(X) (((double)(X))-(double)ipart_(X))
-#define rfpart_(X) (1.0-fpart_(X))
+# define ipart_(X) ((int)(X))
+# define round_(X) ((int)(((double)(X))+0.5))
+# define fpart_(X) (((double)(X))-(double)ipart_(X))
+# define rfpart_(X) (1.0-fpart_(X))
+# define swap_(a, b) do{ __typeof__(a) tmp;  tmp = a; a = b; b = tmp; }while(0)
+
 
 # define PURPLE 0x800080
 
@@ -65,9 +67,7 @@ void			init_structures(t_map *map, t_api *api);
 void			save_line(t_api *api, int x1, int x2, int y1, int y2);
 int				get_percent_color(int color, double percent);
 t_pxl			*make_pxl(int color, int x, int y);
-
-
-
+void			draw(t_api *api, t_map *map);
 
 
 

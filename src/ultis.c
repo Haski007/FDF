@@ -21,6 +21,7 @@ int			show_error(const char *error)
 void		init_structures(t_map *map, t_api *api)
 {
 	map->map = NULL;
+	api->res = NULL;
 }
 
 int			get_percent_color(int color, double percent)

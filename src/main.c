@@ -51,7 +51,7 @@ int				main(int ac, char **av)
 	// get_map(&map);
 	// paint_map(&map);
 	api->mlx = mlx_init();
-	api->win = mlx_new_window(api->mlx, 1000, 1000, "My, fucking graphic\n");
+	api->win = mlx_new_window(api->mlx, 1050, 1050, "My, fucking graphic\n");
 	// y = -1;
 	// while (++y < 1000)
 	// {
@@ -59,9 +59,22 @@ int				main(int ac, char **av)
 	// 	while (++x < 1000)
 	// 		mlx_pixel_put(api->mlx, api->win, x, y, 0xffffff);
 	// }
-	save_line(api, 500, 500, 900, 550);
-	// mlx_pixel_put(api->mlx, api->win, 480, 960, api->color);
+	int		h1 = 350;
+	int		h2 = 650;
+//"X"
+	save_line(api, 75, h1, 325, h2);
+	save_line(api, 75, h2, 325, h1);
+//"У"
+	save_line(api, 400, h1, 525, h1 + (h2 - h1) / 2);
+	save_line(api, 400, h2, 650, h1);
+//"Й"
+	save_line(api, 725, h1, 725, h2);
+	save_line(api, 725, h2, 975, h1);
+	save_line(api, 975, h1, 975, h2);
+	save_line(api, 850, h1 - 25, 850, h1 - 75);
+	mlx_pixel_put(api->mlx, api->win, 260, 200, api->color);
 	// mlx_pixel_put(api->mlx, api->win, 25, 25, color);
+	draw(api, &map);
 	mlx_loop(api->mlx);
 	// system("leaks fdf");
 	return (0);
