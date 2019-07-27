@@ -37,6 +37,7 @@ typedef	struct	s_point
 	int			x;
 	int			y;
 	int			z;
+	int			i;
 }				t_point;
 
 typedef struct	s_api
@@ -45,30 +46,43 @@ typedef struct	s_api
 	void		*win;
 	void		*img;
 	t_list		*res;
+	int			**map;
 	int			color;
+	int			size_x;
+	int			size_y;
+	int			len_x;
+	int			len_y;
+	int			fd;
+	int			m_x;
+	int			m_y;
+	int			zoom;
 }				t_api;
 
-typedef	struct	s_pxl
+typedef	struct	s_line
 {
-	int			x;
-	int			y;
+	int			x1;
+	int			y1;
+	int			x2;
+	int			y2;
 	int			color;
-}				t_pxl;
+}				t_line;
 
-typedef struct	s_map
-{
-	t_list		*map;
-	int			fd;
-}				t_map;
 
 int				show_error(const char *error);
-void            get_map(t_map *map);
-void			init_structures(t_map *map, t_api *api);
+void            get_map(t_api *api, char *av);
+void			init_structures(t_api *api);
 void			save_line(t_api *api, int x1, int x2, int y1, int y2);
 int				get_percent_color(int color, double percent);
-t_pxl			*make_pxl(int color, int x, int y);
-void			draw(t_api *api, t_map *map);
+void			draw(t_api *api);
+void			draw_xyz(t_api *api);
+int				do_something(int key, t_api *api);
+void			connect_pixels(t_api *api);
 
+
+
+
+
+void			paint_map(t_api *api);
 
 
 #endif

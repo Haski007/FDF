@@ -12,132 +12,50 @@
 
 #include "../includes/fdf.h"
 
-void			easyline(t_api *api, int x1, int y1, int x2, int y2)
+void			start_coord(t_api *api)
 {
-	t_pxl	*pxl;
-	double	gradi;
-	double	xend;
-	double	yend;
-	double 	xgap;
-	int 	xpxl1;
-	int 	ypxl1;
-	int		xpxl2;
-	int		ypxl2;
-	double	err;
-	double	dx;
-	double	dy;
-
-	if (x2 <= x1)
-    {
-        ft_swap(&x1, &x2);
-        ft_swap(&y1, &y2);
-    }
-	dx = (double)x2 - (double)x1;
-	dy = (double)y2 - (double)y1;
-	gradi = dy / dx;
-	xend = round_(x1);
-	yend = y1 + gradi * (xend - x1);
-	xgap = rfpart_(x1 + 0.5);
-	xpxl1 = xend;
-	ypxl1 = ipart_(yend);
-	ft_lstpush(&api->res, ft_lstnew(pxl = make_pxl(get_percent_color(api->color,
-		rfpart_(yend) * xgap), xpxl1, ypxl1), sizeof(t_pxl)));
-	free(pxl);
-	ft_lstpush(&api->res, ft_lstnew(pxl = make_pxl(get_percent_color(api->color,
-		fpart_(yend) * xgap), xpxl1, ypxl1 + 1), sizeof(t_pxl)));
-	free(pxl);
-	err = yend + gradi;
-	xend = round_(x2);
-	yend = y2 + gradi * (xend - x2);
-	xgap = fpart_(x2 + 0.5);
-	xpxl2 = ipart_(yend);
-	ypxl2 = xend;
-	ft_lstpush(&api->res, ft_lstnew(pxl = make_pxl(get_percent_color(api->color,
-		rfpart_(yend) * xgap), xpxl2, ypxl2), sizeof(t_pxl)));
-	free(pxl);
-	ft_lstpush(&api->res, ft_lstnew(pxl = make_pxl(get_percent_color(api->color,
-		fpart_(yend) * xgap), xpxl2 + 1, ypxl2), sizeof(t_pxl)));
-	free(pxl);
-	while (++xpxl1 < xpxl2)
-	{
-		ft_lstpush(&api->res, ft_lstnew(pxl = make_pxl(get_percent_color(api->color,
-			rfpart_(err)), xpxl1, ipart_(err)), sizeof(t_pxl)));
-		free(pxl);
-		ft_lstpush(&api->res, ft_lstnew(pxl = make_pxl(get_percent_color(api->color,
-			fpart_(err)), xpxl1, ipart_(err) + 1), sizeof(t_pxl)));
-		free(pxl);
-		err += gradi;
-	}
-}
-
-void			hardline(t_api *api, int x1, int y1, int x2, int y2)
-{
-	t_pxl		*pxl;
-	double		dx;
-	double		dy;
-	double		gradi;
-	double		xend;
-	double		yend;
-	double		ygap;
-	int 		xpxl1;
-	int 		ypxl1;
-	int			xpxl2;
-	int			ypxl2;
-	double		err;
-
-
-	if (y2 < y1)
-	{
-		ft_swap(&x1, &x2);
-		ft_swap(&y1, &y2);
-	}
-	dx = (double)x2 - (double)x1;
-	dy = (double)y2 - (double)y1;
-	gradi = dx / dy;
-	///start
-	yend = round_(y1);
-	xend = x1 + gradi * (yend - y1);
-	ygap = rfpart_(y1 + 0.5);
-	ypxl1 = yend;
-	xpxl1 = ipart_(xend);
-	ft_lstpush(&api->res, ft_lstnew(pxl = make_pxl(get_percent_color(api->color,
-		rfpart_(xend) * ygap), xpxl1, ypxl1), sizeof(t_pxl)));
-	free(pxl);
-	ft_lstpush(&api->res, ft_lstnew(pxl = make_pxl(get_percent_color(api->color,
-		fpart_(xend) * ygap), xpxl1 + 1, ypxl1), sizeof(t_pxl)));
-	free(pxl);
-	err = xend + gradi;
-	///end
-	yend = round_(y2);
-	xend = x2 + gradi * (yend - y2);
-	ygap = fpart_(y2 + 0.5);
-	ypxl2 = yend;
-	xpxl2 = ipart_(xend);
-	ft_lstpush(&api->res, ft_lstnew(pxl = make_pxl(get_percent_color(api->color,
-		rfpart_(xend) * ygap), xpxl2, ypxl2), sizeof(t_pxl)));
-	free(pxl);
-	ft_lstpush(&api->res, ft_lstnew(pxl = make_pxl(get_percent_color(api->color,
-		fpart_(xend) * ygap), xpxl2 + 1, ypxl2), sizeof(t_pxl)));
-	free(pxl);
-	while (++ypxl1 < ypxl2)
-	{
-		ft_lstpush(&api->res, ft_lstnew(pxl = make_pxl(get_percent_color(api->color,
-			rfpart_(err)), ipart_(err), ypxl1), sizeof(t_pxl)));
-		free(pxl);
-		ft_lstpush(&api->res, ft_lstnew(pxl = make_pxl(get_percent_color(api->color,
-			fpart_(err)), ipart_(err) + 1, ypxl1), sizeof(t_pxl)));
-		free(pxl);
-		err += gradi;
-	}
+	api->len_x *= api->zoom;
+	api->len_y *= api->zoom;
 }
 
 void			save_line(t_api *api, int x1, int y1, int x2, int y2)
 {
 	int 	y;
 	int		x;
+	t_line	*line;
 
-	if (abs(x2 - x1) >= abs(y2 - y1))
-		easyline(api, x1, y1, x2, y2);
-	else
-		hardline(api, x1, y1, x2, y2);
+	line = (t_line*)malloc(sizeof(t_line));
+	line->x1 = x1;
+	line->y1 = y1;
+	line->x2 = x2;
+	line->y2 = y2;
+	ft_lstpush(&api->res, ft_lstnew(line, sizeof(t_line)));
+}
+
+void			connect_pixels(t_api *api)
+{
+	int		x;
+	int		y;
+	int		end_x;
+	int		end_y;
+
+	end_x = api->len_x;
+	end_y = api->len_y;
+	start_coord(api);
+	y = -1;
+	while (++y < end_y)
+	{
+		x = -1;
+		while (++x < end_x)
+		{
+			if (x + 1 < end_x)
+				save_line(api, api->size_x / 2 - api->len_x / 2 + x * api->zoom, api->size_y / 2 - api->len_y / 2 + y * api->zoom,
+				api->size_x / 2 - api->len_x / 2 + (x + 1) * api->zoom,
+				api->size_y / 2 - api->len_y / 2 + y * api->zoom);
+			if (y + 1 < end_y)
+				save_line(api, api->size_x / 2 - api->len_x / 2 + x * api->zoom, api->size_y / 2 - api->len_y / 2 + y * api->zoom,
+				api->size_x / 2 - api->len_x / 2 + x * api->zoom,
+				api->size_y / 2 - api->len_y / 2 + (y + 1) * api->zoom);
+		}
+	}
 }

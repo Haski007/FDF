@@ -18,9 +18,16 @@ int			show_error(const char *error)
 	exit(0);
 }
 
-void		init_structures(t_map *map, t_api *api)
+void		init_structures(t_api *api)
 {
-	map->map = NULL;
+	api->size_x = 1000;
+	api->size_y = 1000;
+	api->len_x = 0;
+	api->len_y = 0;
+	api->m_x = 0;
+	api->m_y = 0;
+	api->zoom = 50;
+	api->map = NULL;
 	api->res = NULL;
 }
 
@@ -42,3 +49,28 @@ int			get_percent_color(int color, double percent)
 	return (res);
 }
 
+void			draw_xyz(t_api *api)
+{
+	int		h1;
+	int		h2;
+	//"X"
+	h1 = 350;
+	h2 = 650;
+	save_line(api, 75, h1, 325, h2);
+	save_line(api, 75, h2, 325, h1);
+//"У"
+	save_line(api, 400, h1, 525, h1 + (h2 - h1) / 2);
+	save_line(api, 400, h2, 650, h1);
+//"Й"
+	save_line(api, 725, h1, 725, h2);
+	save_line(api, 725, h2, 975, h1);
+	save_line(api, 975, h1, 975, h2);
+	save_line(api, 850, h1 - 25, 850, h1 - 75);
+}
+
+int			do_something(int key, t_api *api)
+{
+	if (key == 53)
+		exit(0);
+	return (0);
+}

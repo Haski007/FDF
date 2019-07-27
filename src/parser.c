@@ -12,21 +12,10 @@
 
 #include "../includes/fdf.h"
 
-t_pxl			*make_pxl(int color, int x, int y)
-{
-	t_pxl	*pxl;
-
-	pxl = (t_pxl*)malloc(sizeof(t_pxl));
-	pxl->x = x;
-	pxl->y = y;
-	pxl->color = color;
-	return (pxl);
-}
-
 t_point			*make_point(int x, int y, int z)
 {
-	t_point	*point;
-	
+	t_point		*point;
+
 	point = (t_point*)malloc(sizeof(t_point));
 	point->x = x;
 	point->y = y;
@@ -34,43 +23,55 @@ t_point			*make_point(int x, int y, int z)
 	return (point);
 }
 
-t_list			*get_row(char *line, int y)
+void			init_map(t_api *api)
 {
-	t_list	*list;
-	t_point	*point;
+	char	*line;
 	int		i;
-	int		x;
 
-	list = NULL;
-	x = 0;
-	i = -1;
-	ft_lstpush(&list, ft_lstnew(point = make_point(x, y, ft_atoi(line + i)), sizeof(t_point)));
-	free(point);
-	while (line[++i])
+	while (get_next_line(api->fd, &line) > 0)
 	{
-		if (line[i + 1] >= '0' && line[i + 1] <= '9' && line[i] == ' ')
-		{
-			ft_lstpush(&list, ft_lstnew(point = make_point(++x, y, ft_atoi(line + i)), sizeof(t_point)));
-			free(point);
-		}
+		i = -1;
+		line[ft_strlen(line) + 1] = '\0';
+		if (!api->len_x)
+			while (line[++i] != '\0')
+				if (line[i] >= '0' && line[i] <= '9')
+				{
+					api->len_x++;
+					while (line[i] >= '0' && line[i] <= '9')
+						i++;
+				}
+		api->len_y++;
 	}
-	return (list);
+	api->map = (int**)malloc(sizeof(int*) * api->len_y + 1);
+	api->map[api->len_y] = NULL;
+	i = -1;
+	while (++i < api->size_y)
+		api->map[i] = (int*)malloc(sizeof(int) * api->len_x);
 }
 
-
-void			get_map(t_map *map)
+void			get_map(t_api *api, char *av)
 {
 	char	*line;
 	int		y;
-	t_list	*tmp;
+	int		x;
+	int		i;
 
+	init_map(api);
+	close(api->fd);
+	api->fd = open(av, O_RDONLY);
 	y = -1;
-	while (get_next_line(map->fd, &line))
+	while (get_next_line(api->fd, &line) > 0)
 	{
-		if (line[0] == '\0')
-			break ;
-		ft_lstpush(&map->map, ft_lstnew(tmp = get_row(line, ++y), sizeof(t_list)));
-		free(tmp);
-		ft_strdel(&line);
+		y++;
+		i = -1;
+		x = -1;
+		line[ft_strlen(line) + 1] = '\0';
+		while (line[++i] != '\0')
+			if (line[i] >= '0' && line[i] <= '9')
+			{
+				api->map[y][++x] = ft_atoi(line + i);
+				while (line[i] >= '0' && line[i] <= '9')
+					i++;
+			}
 	}
 }
