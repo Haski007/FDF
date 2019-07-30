@@ -49,13 +49,9 @@ void			connect_pixels(t_api *api)
 		while (++x < end_x)
 		{
 			if (x + 1 < end_x)
-				save_line(api, api->size_x / 2 - api->len_x / 2 + x * api->zoom, api->size_y / 2 - api->len_y / 2 + y * api->zoom,
-				api->size_x / 2 - api->len_x / 2 + (x + 1) * api->zoom,
-				api->size_y / 2 - api->len_y / 2 + y * api->zoom);
+				save_line(api, x, y, x + 1, y);
 			if (y + 1 < end_y)
-				save_line(api, api->size_x / 2 - api->len_x / 2 + x * api->zoom, api->size_y / 2 - api->len_y / 2 + y * api->zoom,
-				api->size_x / 2 - api->len_x / 2 + x * api->zoom,
-				api->size_y / 2 - api->len_y / 2 + (y + 1) * api->zoom);
+				save_line(api, x, y, x, y + 1);
 		}
 	}
 }

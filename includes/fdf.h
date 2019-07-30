@@ -28,7 +28,7 @@
 # define fpart_(X) (((double)(X))-(double)ipart_(X))
 # define rfpart_(X) (1.0-fpart_(X))
 # define swap_(a, b) do{ __typeof__(a) tmp;  tmp = a; a = b; b = tmp; }while(0)
-
+# define ZOOM(X) X * api->zoom
 
 # define PURPLE 0x800080
 
@@ -77,6 +77,9 @@ void			draw(t_api *api);
 void			draw_xyz(t_api *api);
 int				do_something(int key, t_api *api);
 void			connect_pixels(t_api *api);
+int				centr_x(t_api *api, int x);
+int				centr_y(t_api *api, int y);
+
 
 
 

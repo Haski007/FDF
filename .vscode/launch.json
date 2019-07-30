@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "/Users/pdemian/FdF/fdf",
-            "args": ["test_maps/10-2.fdf"],
+            "args": ["test_maps/42.fdf"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

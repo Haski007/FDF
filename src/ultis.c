@@ -18,6 +18,16 @@ int			show_error(const char *error)
 	exit(0);
 }
 
+int			centr_x(t_api *api, int x)
+{
+	return (api->size_x / 2 - api->len_x / 2 + x * api->zoom);
+}
+
+int			centr_y(t_api *api, int y)
+{
+	return (api->size_y / 2 - api->len_y / 2 + y * api->zoom);
+}
+
 void		init_structures(t_api *api)
 {
 	api->size_x = 1000;
@@ -71,6 +81,9 @@ void			draw_xyz(t_api *api)
 int			do_something(int key, t_api *api)
 {
 	if (key == 53)
+	{
+		system("leaks fdf");
 		exit(0);
+	}
 	return (0);
 }

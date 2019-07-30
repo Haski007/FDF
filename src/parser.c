@@ -40,6 +40,7 @@ void			init_map(t_api *api)
 					while (line[i] >= '0' && line[i] <= '9')
 						i++;
 				}
+		ft_strdel(&line);
 		api->len_y++;
 	}
 	api->map = (int**)malloc(sizeof(int*) * api->len_y + 1);
@@ -67,11 +68,15 @@ void			get_map(t_api *api, char *av)
 		x = -1;
 		line[ft_strlen(line) + 1] = '\0';
 		while (line[++i] != '\0')
-			if (line[i] >= '0' && line[i] <= '9')
+			if ((line[i] >= '0' && line[i] <= '9') || (line[i] == '-' &&
+			line[i + 1] >= '0' && line[i + 1] <= '9'))
 			{
 				api->map[y][++x] = ft_atoi(line + i);
 				while (line[i] >= '0' && line[i] <= '9')
 					i++;
+			system("leaks fdf");
+			exit(1);
 			}
+		ft_strdel(&line);
 	}
 }
