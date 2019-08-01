@@ -12,6 +12,35 @@
 
 #include "../includes/fdf.h"
 
+void			iso(t_api *api, int *x, int *y, int z)
+{
+    int previous_x;
+    int previous_y;
+
+	z *= api->zoom;
+    previous_x = centr_x(api, *x);
+    previous_y = centr_y(api, *y);
+	*x = (previous_x - previous_y) * cos(0.523599);
+    *y = -z + (previous_x + previous_y) * sin(0.523599);
+}
+
+void			isometrical(t_api *api)
+{
+	t_list	*list;
+	t_line	*line;
+
+	list = api->res;
+	while (list)
+	{
+		line = (t_line*)list->content;
+		iso(api, &line->x1, &line->y1, api->map[line->y1][line->x1]);
+		iso(api, &line->x2, &line->y2, api->map[line->y2][line->x2]);
+		line->x1 += api->size_x / 2;
+		line->x2 += api->size_x / 2;
+		list = list->next;
+	}
+}
+
 void			clear_screen(t_api *api)
 {
 	mlx_clear_window(api->mlx, api->win);
@@ -50,14 +79,14 @@ int				main(int ac, char **av)
 	get_map(api, av[1]);
 	// paint_map(api);
 	connect_pixels(api);
+	isometrical(api);
 	api->mlx = mlx_init();
 	api->win = mlx_new_window(api->mlx, api->size_x, api->size_y, "My, fucking graphic\n");
-	draw(api);
-	mlx_pixel_put(api->mlx, api->win, 501, 501, 0xffffff);
-	mlx_hook(api->win, 2, 0, do_something, api);
-	mlx_loop(api->mlx);
-	draw_xyz(api);
-	// system("leaks fdf");
 	// clear_screen(api);
+	draw(api);
+	// draw_xyz(api);
+	mlx_hook(api->win, 2, 0, do_something, api);
+	mlx_pixel_put(api->mlx, api->win, 501, 501, 0xffffff);
+	mlx_loop(api->mlx);
 	return (0);
 }

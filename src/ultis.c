@@ -20,12 +20,12 @@ int			show_error(const char *error)
 
 int			centr_x(t_api *api, int x)
 {
-	return (api->size_x / 2 - api->len_x / 2 + x * api->zoom);
+	return (api->size_x / 2 - api->len_x * api->zoom / 2 + x * api->zoom);
 }
 
 int			centr_y(t_api *api, int y)
 {
-	return (api->size_y / 2 - api->len_y / 2 + y * api->zoom);
+	return (api->size_y / 2 - api->len_y * api->zoom / 2 + y * api->zoom);
 }
 
 void		init_structures(t_api *api)
@@ -64,6 +64,15 @@ void			draw_xyz(t_api *api)
 	int		h1;
 	int		h2;
 	//"X"
+
+	clear_screen(api);
+	h1 = -1;
+	while (++h1 < api->size_y)
+	{
+		h2 = -1;
+		while (++h2 < api->size_x)
+			mlx_pixel_put(api->mlx, api->win, h1, h2, 0x00000);
+	}
 	h1 = 350;
 	h2 = 650;
 	save_line(api, 75, h1, 325, h2);
@@ -76,14 +85,21 @@ void			draw_xyz(t_api *api)
 	save_line(api, 725, h2, 975, h1);
 	save_line(api, 975, h1, 975, h2);
 	save_line(api, 850, h1 - 25, 850, h1 - 75);
+	draw(api);
 }
 
 int			do_something(int key, t_api *api)
 {
 	if (key == 53)
 	{
-		system("leaks fdf");
+		// system("leaks fdf");
 		exit(0);
 	}
+	else if (key == 69)
+		zoom_plus(api);
+	else if (key == 78)
+		zoom_minus(api);
+	else if (key == 4)
+		draw_xyz(api);
 	return (0);
 }

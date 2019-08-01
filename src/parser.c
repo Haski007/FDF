@@ -27,27 +27,28 @@ void			init_map(t_api *api)
 {
 	char	*line;
 	int		i;
+	int		**map;
 
 	while (get_next_line(api->fd, &line) > 0)
 	{
 		i = -1;
-		line[ft_strlen(line) + 1] = '\0';
 		if (!api->len_x)
-			while (line[++i] != '\0')
-				if (line[i] >= '0' && line[i] <= '9')
+			while (line[++i])
+				if (ft_isdigit(line[i]))
 				{
 					api->len_x++;
-					while (line[i] >= '0' && line[i] <= '9')
+					while (ft_isdigit(line[i]))
 						i++;
 				}
-		ft_strdel(&line);
 		api->len_y++;
+		ft_strdel(&line);
 	}
-	api->map = (int**)malloc(sizeof(int*) * api->len_y + 1);
-	api->map[api->len_y] = NULL;
+	map = (int**)malloc(sizeof(int*) * (api->len_y + 1));
+	map[api->len_y] = NULL;
 	i = -1;
-	while (++i < api->size_y)
-		api->map[i] = (int*)malloc(sizeof(int) * api->len_x);
+	while (++i < api->len_y)
+		map[i] = (int*)malloc(sizeof(int) * api->len_x);
+	api->map = map;
 }
 
 void			get_map(t_api *api, char *av)
@@ -66,16 +67,12 @@ void			get_map(t_api *api, char *av)
 		y++;
 		i = -1;
 		x = -1;
-		line[ft_strlen(line) + 1] = '\0';
 		while (line[++i] != '\0')
-			if ((line[i] >= '0' && line[i] <= '9') || (line[i] == '-' &&
-			line[i + 1] >= '0' && line[i + 1] <= '9'))
+			if (ft_isdigit(line[i]) || (line[i] == '-' && ft_isdigit(line[i])))
 			{
 				api->map[y][++x] = ft_atoi(line + i);
-				while (line[i] >= '0' && line[i] <= '9')
+				while (ft_isdigit(line[i]))
 					i++;
-			system("leaks fdf");
-			exit(1);
 			}
 		ft_strdel(&line);
 	}

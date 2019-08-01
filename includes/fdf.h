@@ -79,6 +79,13 @@ int				do_something(int key, t_api *api);
 void			connect_pixels(t_api *api);
 int				centr_x(t_api *api, int x);
 int				centr_y(t_api *api, int y);
+void			clear_screen(t_api *api);
+void			isometrical(t_api *api);
+void			zoom_plus(t_api *api);
+void			zoom_minus(t_api *api);
+
+
+
 
 
 

@@ -12,10 +12,25 @@
 
 #include "../includes/fdf.h"
 
-void			start_coord(t_api *api)
+void			zoom_plus(t_api *api)
 {
-	api->len_x *= api->zoom;
-	api->len_y *= api->zoom;
+	api->zoom += 1;
+	clear_screen(api);
+	connect_pixels(api);
+	isometrical(api);
+	draw(api);
+}
+
+void			zoom_minus(t_api *api)
+{
+	if (api->zoom == 1)
+		api->zoom = api->zoom;
+	else if (api->zoom != 1)
+		api->zoom -= 1;
+	clear_screen(api);
+	connect_pixels(api);
+	isometrical(api);
+	draw(api);
 }
 
 void			save_line(t_api *api, int x1, int y1, int x2, int y2)
@@ -30,27 +45,23 @@ void			save_line(t_api *api, int x1, int y1, int x2, int y2)
 	line->x2 = x2;
 	line->y2 = y2;
 	ft_lstpush(&api->res, ft_lstnew(line, sizeof(t_line)));
+	free(line);
 }
 
 void			connect_pixels(t_api *api)
 {
 	int		x;
 	int		y;
-	int		end_x;
-	int		end_y;
 
-	end_x = api->len_x;
-	end_y = api->len_y;
-	start_coord(api);
 	y = -1;
-	while (++y < end_y)
+	while (++y < api->len_y)
 	{
 		x = -1;
-		while (++x < end_x)
+		while (++x < api->len_x)
 		{
-			if (x + 1 < end_x)
+			if (x + 1 < api->len_x)
 				save_line(api, x, y, x + 1, y);
-			if (y + 1 < end_y)
+			if (y + 1 < api->len_y)
 				save_line(api, x, y, x, y + 1);
 		}
 	}
