@@ -12,17 +12,6 @@
 
 #include "../includes/fdf.h"
 
-t_point			*make_point(int x, int y, int z)
-{
-	t_point		*point;
-
-	point = (t_point*)malloc(sizeof(t_point));
-	point->x = x;
-	point->y = y;
-	point->z = z;
-	return (point);
-}
-
 void			init_map(t_api *api)
 {
 	char	*line;
@@ -61,13 +50,15 @@ void			get_map(t_api *api, char *av)
 	init_map(api);
 	close(api->fd);
 	api->fd = open(av, O_RDONLY);
+	if (read(api->fd, line, 0) < 0)
+		show_error("File is not supported!");
 	y = -1;
 	while (get_next_line(api->fd, &line) > 0)
 	{
 		y++;
 		i = -1;
 		x = -1;
-		while (line[++i] != '\0')
+		while (line[++i])
 			if (ft_isdigit(line[i]) || (line[i] == '-' && ft_isdigit(line[i])))
 			{
 				api->map[y][++x] = ft_atoi(line + i);

@@ -62,8 +62,10 @@ typedef	struct	s_line
 {
 	int			x1;
 	int			y1;
+	int			z1;
 	int			x2;
 	int			y2;
+	int			z2;
 	int			color;
 }				t_line;
 
@@ -83,9 +85,8 @@ void			clear_screen(t_api *api);
 void			isometrical(t_api *api);
 void			zoom_plus(t_api *api);
 void			zoom_minus(t_api *api);
-
-
-
+void			move_fiqure(t_api *api, int key);
+void			rotate_fiqure(t_api *api, int key);
 
 
 

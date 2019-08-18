@@ -30,8 +30,8 @@ int			centr_y(t_api *api, int y)
 
 void		init_structures(t_api *api)
 {
-	api->size_x = 1000;
 	api->size_y = 1000;
+	api->size_x = 1000;
 	api->len_x = 0;
 	api->len_y = 0;
 	api->m_x = 0;
@@ -88,18 +88,22 @@ void			draw_xyz(t_api *api)
 	draw(api);
 }
 
-int			do_something(int key, t_api *api)
+int                     do_something(int key, t_api *api)
 {
-	if (key == 53)
-	{
-		// system("leaks fdf");
-		exit(0);
-	}
-	else if (key == 69)
+    if (key == 53)
+    {
+            // system("leaks fdf");
+            exit(0);
+    }
+    else if (key == 69)
 		zoom_plus(api);
-	else if (key == 78)
+    else if (key == 78)
 		zoom_minus(api);
-	else if (key == 4)
+    else if (key == 4)
 		draw_xyz(api);
-	return (0);
+    else if (key < 127 && key > 122)
+		move_fiqure(api, key);
+	else if ((key > -1 && key < 3) || (key > 11 && key < 14))
+		rotate_fiqure(api, key);
+    return (0);
 }
