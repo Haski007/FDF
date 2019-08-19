@@ -60,11 +60,11 @@ typedef struct	s_api
 
 typedef	struct	s_line
 {
-	int			x1;
-	int			y1;
+	double		x1;
+	double		y1;
 	int			z1;
-	int			x2;
-	int			y2;
+	double		x2;
+	double		y2;
 	int			z2;
 	int			color;
 }				t_line;

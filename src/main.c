@@ -13,10 +13,10 @@
 
 #include "../includes/fdf.h"
 
-void			iso(t_api *api, int *x, int *y, int z)
+void			iso(t_api *api, double *x, double *y, int z)
 {
-    int previous_x;
-    int previous_y;
+    double previous_x;
+    double previous_y;
 
 	z *= api->zoom;
     previous_x = centr_x(api, *x);
@@ -34,8 +34,8 @@ void			isometrical(t_api *api)
 	while (list)
 	{
 		line = (t_line*)list->content;
-		iso(api, &line->x1, &line->y1, api->map[line->y1][line->x1]);
-		iso(api, &line->x2, &line->y2, api->map[line->y2][line->x2]);
+		iso(api, &line->x1, &line->y1, api->map[(int)line->y1][(int)line->x1]);
+		iso(api, &line->x2, &line->y2, api->map[(int)line->y2][(int)line->x2]);
 		line->x1 += api->size_x / 2;
 		line->x2 += api->size_x / 2;
 		list = list->next;

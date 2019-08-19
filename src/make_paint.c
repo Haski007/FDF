@@ -12,6 +12,27 @@
 
 #include "../includes/fdf.h"
 
+void			transform(t_api *api, double *x, double *y, char dir)
+{
+	double		tmp_x;
+
+	*x -= api->size_x / 2;
+	*y -= api->size_y / 2;
+	tmp_x = *x;
+	if (dir)
+	{
+		*x = *x * cos(4 * M_PI / 180) - *y * sin(4 * M_PI / 180);
+		*y = tmp_x * sin(4 * M_PI / 180) + *y * cos(4 * M_PI / 180);
+	}
+	else
+	{
+		*x = *x * cos(4 * M_PI / 180) + *y * sin(4 * M_PI / 180);
+		*y = tmp_x * sin(4 * M_PI / 180) - *y * cos(4 * M_PI / 180);
+	}
+	*x += api->size_x / 2;
+	*y += api->size_y / 2;
+}
+
 void			rotate_fiqure(t_api *api, int key)
 {
 	t_list	*list;
@@ -21,28 +42,16 @@ void			rotate_fiqure(t_api *api, int key)
 	while (list)
 	{
 		line = (t_line*)list->content;
-		line->x1 -= api->size_x / 2;
-		line->x2 -= api->size_x / 2;
-		line->y1 -= api->size_y / 2;
-		line->y2 -= api->size_y / 2;
 		if (key == 0)
 		{
-			line->x1 = cos(0.0523599) * line->x1 + sin(0.0523599) * line->y1;
-			line->y1 = cos(0.0523599) * line->y1 - sin(0.0523599) * line->x1;
-			line->x2 = cos(0.0523599) * line->x2 + sin(0.0523599) * line->y2;
-			line->y2 = cos(0.0523599) * line->y2 - sin(0.0523599) * line->x2;
+			transform(api, &line->x1, &line->y1, 0);
+			transform(api, &line->x2, &line->y2, 0);
 		}
 		else if (key == 2)
 		{
-			line->x1 = cos(0.0523599) * line->x1 - sin(0.0523599) * line->y1;
-			line->y1 = cos(0.0523599) * line->y1 + sin(0.0523599) * line->x1;
-			line->x2 = cos(0.0523599) * line->x2 - sin(0.0523599) * line->y2;
-			line->y2 = cos(0.0523599) * line->y2 + sin(0.0523599) * line->x2;
+			transform(api, &line->x1, &line->y1, 1);
+			transform(api, &line->x1, &line->y1, 1);
 		}
-		line->x1 += api->size_x / 2;
-		line->x2 += api->size_x / 2;
-		line->y1 += api->size_y / 2;
-		line->y2 += api->size_y / 2;
 		list = list->next;
 	}
 	mlx_clear_window(api->mlx, api->win);
