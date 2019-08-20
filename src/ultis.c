@@ -18,92 +18,49 @@ int			show_error(const char *error)
 	exit(0);
 }
 
-int			centr_x(t_api *api, int x)
-{
-	return (api->size_x / 2 - api->len_x * api->zoom / 2 + x * api->zoom);
-}
+// int			get_percent_color(int color, double percent)
+// {
+// 	int		r;
+// 	int		g;
+// 	int		b;
+// 	int		res;
 
-int			centr_y(t_api *api, int y)
-{
-	return (api->size_y / 2 - api->len_y * api->zoom / 2 + y * api->zoom);
-}
-
-void		init_structures(t_api *api)
-{
-	api->size_y = 1000;
-	api->size_x = 1000;
-	api->len_x = 0;
-	api->len_y = 0;
-	api->m_x = 0;
-	api->m_y = 0;
-	api->zoom = 50;
-	api->map = NULL;
-	api->res = NULL;
-}
-
-int			get_percent_color(int color, double percent)
-{
-	int		r;
-	int		g;
-	int		b;
-	int		res;
-
-	r = (color >> 16) & 0xFF;
-	g = (color >> 8) & 0xFF;
-	b = color & 0xFF;
-	res = r * percent;
-	res = res << 8;
-	res += g * percent;
-	res = res << 8;
-	res += b * percent;
-	return (res);
-}
+// 	r = (color >> 16) & 0xFF;
+// 	g = (color >> 8) & 0xFF;
+// 	b = color & 0xFF;
+// 	res = r * percent;
+// 	res = res << 8;
+// 	res += g * percent;
+// 	res = res << 8;
+// 	res += b * percent;
+// 	return (res);
+// }
 
 void			draw_xyz(t_api *api)
 {
-	int		h1;
-	int		h2;
-	//"X"
+// 	int		h1;
+// 	int		h2;
+// 	//"X"
 
-	clear_screen(api);
-	h1 = -1;
-	while (++h1 < api->size_y)
-	{
-		h2 = -1;
-		while (++h2 < api->size_x)
-			mlx_pixel_put(api->mlx, api->win, h1, h2, 0x00000);
-	}
-	h1 = 350;
-	h2 = 650;
-	save_line(api, 75, h1, 325, h2);
-	save_line(api, 75, h2, 325, h1);
-//"У"
-	save_line(api, 400, h1, 525, h1 + (h2 - h1) / 2);
-	save_line(api, 400, h2, 650, h1);
-//"Й"
-	save_line(api, 725, h1, 725, h2);
-	save_line(api, 725, h2, 975, h1);
-	save_line(api, 975, h1, 975, h2);
-	save_line(api, 850, h1 - 25, 850, h1 - 75);
-	draw(api);
-}
-
-int                     do_something(int key, t_api *api)
-{
-    if (key == 53)
-    {
-            // system("leaks fdf");
-            exit(0);
-    }
-    else if (key == 69)
-		zoom_plus(api);
-    else if (key == 78)
-		zoom_minus(api);
-    else if (key == 4)
-		draw_xyz(api);
-    else if (key < 127 && key > 122)
-		move_fiqure(api, key);
-	else if ((key > -1 && key < 3) || (key > 11 && key < 14))
-		rotate_fiqure(api, key);
-    return (0);
+// 	clear_screen(api);
+// 	h1 = -1;
+// 	while (++h1 < api->size_y)
+// 	{
+// 		h2 = -1;
+// 		while (++h2 < api->size_x)
+// 			mlx_pixel_put(api->mlx, api->win, h1, h2, 0x00000);
+// 	}
+// 	h1 = 350;
+// 	h2 = 650;
+// 	draw(api, save_line(75, h1, 325, h2));
+// 	draw(api, save_line(75, h2, 325, h1));
+// //"У"
+// 	draw(api, save_line(400, h1, 525, h1 + (h2 - h1) / 2));
+// 	draw(api, save_line(400, h2, 650, h1));
+// //"Й"
+// 	draw(api, save_line(725, h1, 725, h2));
+// 	draw(api, save_line(725, h2, 975, h1));
+// 	draw(api, save_line(975, h1, 975, h2));
+// 	draw(api, save_line(850, h1 - 25, 850, h1 - 75));
+// 	draw(api);
 }

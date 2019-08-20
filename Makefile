@@ -24,7 +24,7 @@ LFLAGS :=	-lft -L $(LIBDIR) -lmlx -framework OpenGL -framework AppKit
 
 LIB :=		$(LIBDIR)libft.a
 INC :=		fdf
-SRC :=		main ultis parser draw make_paint
+SRC :=		main parser ultis draw interactive rotations
 
 INCS :=		$(addprefix $(INCDIR), $(addsuffix .h, $(INC)))
 SRCS :=		$(addprefix $(SRCDIR), $(addsuffix .c, $(SRC)))

@@ -12,59 +12,77 @@
 
 #include "../includes/fdf.h"
 
-void			init_map(t_api *api)
+static t_point	*make_point(int x, int y, int z)
 {
-	char	*line;
-	int		i;
-	int		**map;
+	t_point		*point;
 
-	while (get_next_line(api->fd, &line) > 0)
-	{
-		i = -1;
-		if (!api->len_x)
-			while (line[++i])
-				if (ft_isdigit(line[i]))
-				{
-					api->len_x++;
-					while (ft_isdigit(line[i]))
-						i++;
-				}
-		api->len_y++;
-		ft_strdel(&line);
-	}
-	map = (int**)malloc(sizeof(int*) * (api->len_y + 1));
-	map[api->len_y] = NULL;
-	i = -1;
-	while (++i < api->len_y)
-		map[i] = (int*)malloc(sizeof(int) * api->len_x);
-	api->map = map;
+	point = (t_point*)malloc(sizeof(t_point));
+	point->x = x;
+	point->y = y;
+	point->z = z;
+	return (point);
 }
 
-void			get_map(t_api *api, char *av)
+/*
+**	Malloc map by 1 goes
+*/
+static void		size_map(t_api *api)
 {
 	char	*line;
-	int		y;
-	int		x;
 	int		i;
-
-	init_map(api);
-	close(api->fd);
-	api->fd = open(av, O_RDONLY);
+	
 	if (read(api->fd, line, 0) < 0)
 		show_error("File is not supported!");
-	y = -1;
 	while (get_next_line(api->fd, &line) > 0)
 	{
-		y++;
 		i = -1;
-		x = -1;
-		while (line[++i])
-			if (ft_isdigit(line[i]) || (line[i] == '-' && ft_isdigit(line[i])))
+		if (!api->fig_x)
+			while (line[++i])
 			{
-				api->map[y][++x] = ft_atoi(line + i);
-				while (ft_isdigit(line[i]))
+				if (ft_isdigit(line[i]))
+				{
+					while (line[i + 1] && ft_isdigit(line[i]))
+						i++;
+					api->fig_x++;
+				}
+			}
+		ft_strdel(&line);		
+		api->fig_y++;
+	}
+	
+}
+
+/*
+**	Read and save map
+*/
+void			get_map(t_api *api, char *file)
+{
+	char	*line;
+	int		x;
+	int		y;
+	int		i;
+	t_point	*p;
+
+    api->fd = open(file, O_RDONLY);
+	size_map(api);
+	close(api->fd);
+    api->fd = open(file, O_RDONLY);
+	y = 0;
+	while (get_next_line(api->fd, &line) > 0)
+	{
+		x = -1;
+		i = -1;
+		while (line[++i])
+		{
+			if (ft_isdigit(line[i]))
+			{
+				ft_lstpush(&api->points, ft_lstnew(p = make_point(++x, y, ft_atoi(line + i)), sizeof(t_point)));
+				free(p);
+				while (line[i + 1] && ft_isdigit(line[i]))
 					i++;
 			}
+		}
 		ft_strdel(&line);
+		y++;
 	}
 }

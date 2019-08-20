@@ -13,81 +13,58 @@
 
 #include "../includes/fdf.h"
 
-void			iso(t_api *api, double *x, double *y, int z)
+void			paint_map(t_api *api)
 {
-    double previous_x;
-    double previous_y;
+	t_list		*list;
+	t_point		*p;
 
-	z *= api->zoom;
-    previous_x = centr_x(api, *x);
-    previous_y = centr_y(api, *y);
-	*x = (previous_x - previous_y) * cos(0.523599);
-    *y = -z + (previous_x + previous_y) * sin(0.523599);
-}
-
-void			isometrical(t_api *api)
-{
-	t_list	*list;
-	t_line	*line;
-
-	list = api->res;
+	list = api->points;
 	while (list)
 	{
-		line = (t_line*)list->content;
-		iso(api, &line->x1, &line->y1, api->map[(int)line->y1][(int)line->x1]);
-		iso(api, &line->x2, &line->y2, api->map[(int)line->y2][(int)line->x2]);
-		line->x1 += api->size_x / 2;
-		line->x2 += api->size_x / 2;
+		p = (t_point*)list->content;
+		ft_printf("%d ", p->z);
+		if (p->x == api->fig_x - 1)
+			ft_putchar('\n');
 		list = list->next;
 	}
 }
 
-void			clear_screen(t_api *api)
+/*
+** 	Set start value for structures
+*/
+static void		init_structures(t_api *api)
 {
-	mlx_clear_window(api->mlx, api->win);
-	ft_lstdel(&api->res, ft_lstfree);
-}
-
-void			paint_map(t_api *api)
-{
-	int		x;
-	int		y;
-
-	y = -1;
-	while (++y < api->len_y)
-	{
-		x = -1;
-		while (++x < api->len_x)
-			ft_printf("%3d", api->map[y][x]);
-		ft_putchar('\n');
-	}
+	api->mlx = NULL;
+	api->win_x = 1000;
+	api->win_y = 1000;
+	api->zoom = 40;
+	api->fd = 0;
+	api->fig_x = 0;
+	api->fig_y = 0;
+	api->points = NULL;
 }
 
 int				main(int ac, char **av)
 {
 	t_api		*api;
-	int			i;
-	int			color;
-	int			x;
-	int			y;
+	int			p;
+	int			t;
+	int			r;
 
 	if (ac != 2)
 		show_error("Incorrect number of arguments");
 	api = (t_api *)malloc(sizeof(t_api));
 	api->color = 0x70ff0000;
 	init_structures(api);
-    api->fd = open(av[1], O_RDONLY);
 	get_map(api, av[1]);
-	// paint_map(api);
-	connect_pixels(api);
-	isometrical(api);
 	api->mlx = mlx_init();
-	api->win = mlx_new_window(api->mlx, api->size_x, api->size_y, "My, fucking graphic\n");
-	// clear_screen(api);
+	api->win = mlx_new_window(api->mlx, api->win_x, api->win_y, "Zaebalo, blyat\n");
+	api->img = mlx_new_image(api->mlx, api->win_x, api->win_y);
+	api->img_arr = (int *)mlx_get_data_addr(api->img, &p, &t, &r);
 	draw(api);
 	// draw_xyz(api);
-	mlx_hook(api->win, 2, 0, do_something, api);
-	mlx_pixel_put(api->mlx, api->win, 501, 501, 0xffffff);
+	mlx_hook(api->win, 2, 0, manage_key, api);
 	mlx_loop(api->mlx);
+	// system("leaks fdf");
 	return (0);
 }
