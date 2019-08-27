@@ -49,7 +49,11 @@ static void		size_map(t_api *api)
 		ft_strdel(&line);		
 		api->fig_y++;
 	}
-	
+	api->points = (t_point**)malloc(sizeof(t_point*) * api->fig_y + 1);
+	api->points[api->fig_y] = NULL;
+	i = -1;
+	while (++i < api->fig_y)
+		api->points[i] = (t_point*)malloc(sizeof(t_point) * api->fig_x);
 }
 
 /*
@@ -61,7 +65,6 @@ void			get_map(t_api *api, char *file)
 	int		x;
 	int		y;
 	int		i;
-	t_point	*p;
 
     api->fd = open(file, O_RDONLY);
 	size_map(api);
@@ -76,8 +79,10 @@ void			get_map(t_api *api, char *file)
 		{
 			if (ft_isdigit(line[i]))
 			{
-				ft_lstpush(&api->points, ft_lstnew(p = make_point(++x, y, ft_atoi(line + i)), sizeof(t_point)));
-				free(p);
+				x++;
+				api->points[y][x].x = x;
+				api->points[y][x].y = y;
+				api->points[y][x].z = ft_atoi(line + i);
 				while (line[i + 1] && ft_isdigit(line[i]))
 					i++;
 			}

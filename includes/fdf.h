@@ -29,7 +29,9 @@
 # define rfpart_(X) (1.0-fpart_(X))
 # define swap_(a, b) do{ __typeof__(a) tmp;  tmp = a; a = b; b = tmp; }while(0)
 # define ZOOM(X) X * api->zoom
-# define POINTS api->points
+# define POINT api->points[y][x]
+# define POINTD api->points[y + 1][x]
+# define POINTR api->points[y][x + 1]
 
 # define PURPLE 0x800080
 
@@ -46,7 +48,7 @@ typedef struct	s_api
 	void		*win;
 	void		*img;
 	int			*img_arr;
-	t_list		*lines;
+	t_point		**points;
 	int			color;
 	int			win_x;
 	int			win_y;
@@ -74,7 +76,12 @@ void			draw_xyz(t_api *api);
 int				manage_key(int key, t_api *api);
 void			rotate_figure(t_api *api, int key);
 void			draw(t_api *api);
-t_line			*save_line(double x1, double y1, double x2, double y2);
+void			move_figure(t_api *api, int key);
+void			make_isometric(t_api *api, double xyz[3]);
+void			connect_pixels(t_api *api);
+
+
+
 
 
 

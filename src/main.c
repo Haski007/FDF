@@ -15,17 +15,16 @@
 
 void			paint_map(t_api *api)
 {
-	t_list		*list;
-	t_point		*p;
+	int		y;
+	int		x;
 
-	list = api->points;
-	while (list)
+	y = -1;
+	while (++y < api->fig_y)
 	{
-		p = (t_point*)list->content;
-		ft_printf("%d ", p->z);
-		if (p->x == api->fig_x - 1)
-			ft_putchar('\n');
-		list = list->next;
+		x = -1;
+		while (++x < api->fig_x)
+			ft_printf("%3d", api->points[y][x].z);
+		ft_putchar('\n');
 	}
 }
 
@@ -62,6 +61,7 @@ int				main(int ac, char **av)
 	api->img = mlx_new_image(api->mlx, api->win_x, api->win_y);
 	api->img_arr = (int *)mlx_get_data_addr(api->img, &p, &t, &r);
 	draw(api);
+	rotate_figure(api, 0);
 	// draw_xyz(api);
 	mlx_hook(api->win, 2, 0, manage_key, api);
 	mlx_loop(api->mlx);

@@ -12,13 +12,40 @@
 
 #include "../includes/fdf.h"
 
-static void		move_figure(t_api *api, int key)
+void		move_figure(t_api *api, int key)
 {
+	int		y;
+	int		x;
+	int		move_x;
+	int		move_y;
 
+	move_x = 0;
+	move_y = 0;
+	y = -1;
+	while (++y < api->fig_y)
+	{
+		x = -1;
+		while (++x < api->fig_x)
+		{
+			if (key == 123 || key == 124)
+				POINT.x += (key == 123) ? -10 : 10;
+			else if (key == 125 || key == 126)
+				POINT.y += (key == 126) ? -10 : 10;
+		}
+	}
+	connect_pixels(api);	
 }
 
+/*
+**	Changing zoom
+*/
 static void		zoom(t_api *api, int key)
 {
+	if (key == 69)
+		api->zoom++;
+	else if (key == 78 && api->zoom > 1)
+		api->zoom--;
+	draw(api);
 }
 
 /*
@@ -37,7 +64,8 @@ int				manage_key(int key, t_api *api)
 		move_figure(api, key);
 	else if ((key > 0 && key < 3) || key == 13)
 		rotate_figure(api, key);
-	else if (key == 4)
-		draw_xyz(api);
+	// else if (key == 4)
+	// 	draw_xyz(api);
+	// draw(api);
 	return (0);
 }
