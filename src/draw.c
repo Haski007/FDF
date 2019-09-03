@@ -174,12 +174,12 @@ void			draw(t_api *api)
 		x = -1;
 		while (++x < api->fig_x)
 		{
-			xyz[0] = (x - api->fig_x / 2) * api->zoom + api->win_x / 2;
-			xyz[1] = (y - api->fig_y / 2) * api->zoom + api->win_y / 2;
+			xyz[0] = (x - api->fig_x / 2) * api->zoom;
+			xyz[1] = (y - api->fig_y / 2) * api->zoom;
 			xyz[2] = api->points[y][x].z * api->zoom;
-			make_isometric(api, xyz);
-			POINT.x = (int)xyz[0];
-			POINT.y = (int)xyz[1];
+			make_isometric(api, xyz, 30);
+			POINT.x = (int)xyz[0] + api->win_x / 2;
+			POINT.y = (int)xyz[1] + api->win_y / 2;
 		}
 	}
 	connect_pixels(api);

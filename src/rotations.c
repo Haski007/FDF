@@ -15,15 +15,15 @@
 /*
 **	Make rotation for parallel fiqure to make fake 3D
 */
-void		make_isometric(t_api *api, double xyz[3])
+void		make_isometric(t_api *api, double xyz[3], int degre)
 {
-	int previous_x;
-    int previous_y;
+	double previous_x;
+    double previous_y;
 
     previous_x = xyz[0];
     previous_y = xyz[1];
-    xyz[0] = (previous_x - previous_y) * cos(30 * M_PI / 180);
-    xyz[1] = -xyz[2] + (previous_x + previous_y) * sin(30 * M_PI / 180);
+    xyz[0] = (previous_x - previous_y) * cos(degre * M_PI / 180);
+    xyz[1] = -xyz[2] + (previous_x + previous_y) * sin(degre * M_PI / 180);
 }
 
 /*
@@ -33,8 +33,8 @@ void			rotate_figure(t_api *api, int key)
 {
     int     x;
     int     y;
-    int     tmp_x;
-    int     tmp_y;
+    double  xyz[3];
+    static int  degree = 4;
 
     y = -1;
     while (++y < api->fig_y)
@@ -42,11 +42,14 @@ void			rotate_figure(t_api *api, int key)
         x = -1;
         while (++x < api->fig_x)
         {
-            tmp_x = POINT.x;
-            tmp_y = POINT.y;
-            POINT.x = (tmp_x - tmp_y) * cos(4 * M_PI / 180);
-            POINT.y = -POINT.z + (tmp_x + tmp_y) * sin(4 * M_PI / 180);
+            xyz[0] = (x - api->fig_x / 2) * api->zoom;
+			xyz[1] = (y - api->fig_y / 2) * api->zoom;
+			xyz[2] = POINT.z * api->zoom;
+			make_isometric(api, xyz, degree);
+			POINT.x = (int)xyz[0] + api->win_x / 2;
+			POINT.y = (int)xyz[1] + api->win_y / 2;
         }
     }
+    degree += 4;
     connect_pixels(api);
 }

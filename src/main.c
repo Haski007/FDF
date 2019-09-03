@@ -61,7 +61,7 @@ int				main(int ac, char **av)
 	api->img = mlx_new_image(api->mlx, api->win_x, api->win_y);
 	api->img_arr = (int *)mlx_get_data_addr(api->img, &p, &t, &r);
 	draw(api);
-	rotate_figure(api, 0);
+	// rotate_figure(api, 0);
 	// draw_xyz(api);
 	mlx_hook(api->win, 2, 0, manage_key, api);
 	mlx_loop(api->mlx);

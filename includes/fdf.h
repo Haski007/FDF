@@ -77,7 +77,7 @@ int				manage_key(int key, t_api *api);
 void			rotate_figure(t_api *api, int key);
 void			draw(t_api *api);
 void			move_figure(t_api *api, int key);
-void			make_isometric(t_api *api, double xyz[3]);
+void			make_isometric(t_api *api, double xyz[3], int degre);
 void			connect_pixels(t_api *api);
 
 
