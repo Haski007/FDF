@@ -62,7 +62,7 @@ int				manage_key(int key, t_api *api)
 		zoom(api, key);
 	else if ((key > 122 && key < 127) || (key > 11 && key < 15))
 		move_figure(api, key);
-	else if ((key > 0 && key < 3) || key == 13)
+	else if ((key > 0 && key < 3) || (key > 11 && key < 15))
 		rotate_figure(api, key);
 	// else if (key == 4)
 	// 	draw_xyz(api);
